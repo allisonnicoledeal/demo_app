@@ -1,8 +1,16 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<form action="/get_student">
-    <input type="text" name="github" />
-    <input type="submit" />
+<form action="/user_profile">
+
+    <select name="id">
+    	{% for user in users %}
+    	<option value="{{user.id}}">
+    		{{user.name}}
+    	</option>
+    	{% endfor %}
+	</select>
+</br>
+	   <input type="submit" value= "Choose Me!!"/>
 </form>
 {% endblock %}
